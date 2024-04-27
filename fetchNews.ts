@@ -9,14 +9,14 @@ export const fetchTechnologyNews = async (): Promise<Article[]> => {
     sortBy: "popularity",
     apikey: Bun.env.API_KEY as string,
   };
-  const url_query = new URLSearchParams(params);
+  const urlQuery = new URLSearchParams(params);
 
   try {
-    const response = await fetch(`${NEWS_URL}/everything?${url_query}`);
+    const response = await fetch(`${NEWS_URL}/everything?${urlQuery}`);
     const data: ApiResponse = await response.json();
     return data.articles;
   } catch (err) {
     console.error("Error fetching News:", err);
     return [];
   }
-}
+};
