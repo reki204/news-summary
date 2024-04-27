@@ -1,19 +1,22 @@
-const NEWS_URL = 'https://newsapi.org/v2';
+import type { Article, ApiResponse } from "./types";
 
-export async function fetchTechnologyNews() {
+const NEWS_URL = "https://newsapi.org/v2";
+
+export const fetchTechnologyNews = async (): Promise<Article[]> => {
   const params = {
-    q: 'technology programming',
-    language: 'en',
-    sortBy: 'popularity',
+    q: "technology programming",
+    language: "en",
+    sortBy: "popularity",
     apikey: Bun.env.API_KEY as string,
-  }
-  const url_query = new URLSearchParams(params);
+  };
+  const urlQuery = new URLSearchParams(params);
+
   try {
-    const response = await fetch(`${NEWS_URL}/everything?${url_query}`);
-    const data = await response.json();
+    const response = await fetch(`${NEWS_URL}/everything?${urlQuery}`);
+    const data: ApiResponse = await response.json();
     return data.articles;
   } catch (err) {
-    console.error('Error fetching News:', err);
+    console.error("Error fetching News:", err);
     return [];
   }
 };
