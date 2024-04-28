@@ -1,15 +1,26 @@
-import { fetchTechnologyNews } from "./fetchNews";
 import type { Article } from "./types";
 import { promises as fsPromises } from "fs";
 import { withErrorHandling } from "./error/errorHandler";
+import type { INewsService } from "./interfaces/INewsService";
 
-export const updateReadme = withErrorHandling(async () => {
-  const articles = await fetchTechnologyNews();
-  if (!(Array.isArray(articles))) throw new Error("Failed to fetch articles");
-  const markdownContent = generateMarkdownList(articles);
-  const readmeTemplate = `# Latest Technology News\n\n## Top 20 Articles\n\n${markdownContent}\n`;
-  await fsPromises.writeFile("README.md", readmeTemplate);
-});
+// export const updateReadme = withErrorHandling(async () => {
+//   const articles = await fetchTechnologyNews();
+//   if (!Array.isArray(articles)) throw new Error("Failed to fetch articles");
+//   const markdownContent = generateMarkdownList(articles);
+//   const readmeTemplate = `# Latest Technology News\n\n## Top 20 Articles\n\n${markdownContent}\n`;
+//   await fsPromises.writeFile("README.md", readmeTemplate);
+// });
+export class ReadmeUpdater {
+  constructor(private newsService: INewsService) {};
+
+  async updateReadme(): Promise<void> {
+    const articles = await this.newsService.fetchNews();
+    if (!Array.isArray(articles)) throw new Error("Failed to fetch articles");
+    const markdownContent = generateMarkdownList(articles);
+    const readmeTemplate = `# Latest Technology News\n\n## Top 20 Articles\n\n${markdownContent}\n`;
+    await fsPromises.writeFile("README.md", readmeTemplate);
+  }
+}
 
 const generateMarkdownList = (articles: Article[]): string => {
   return articles
