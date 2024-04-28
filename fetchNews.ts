@@ -1,5 +1,6 @@
 import type { Article, ApiResponse } from "./types";
 import { withErrorHandling } from "./error/errorHandler";
+import { updateReadme } from "./updateReadme";
 
 const NEWS_URL = "https://newsapi.org/v2";
 
@@ -9,7 +10,7 @@ export const fetchTechnologyNews = withErrorHandling(
       q: "technology programming",
       language: "en",
       sortBy: "popularity",
-      pageSize: "10",
+      pageSize: "20",
       apikey: Bun.env.API_KEY as string,
     };
     const urlQuery = new URLSearchParams(params);
@@ -17,6 +18,7 @@ export const fetchTechnologyNews = withErrorHandling(
     if (!response.ok) throw new Error("Failed to fetch news");
     const data: ApiResponse = await response.json();
 
+    updateReadme();
     return data.articles;
   }
 );

@@ -7,7 +7,7 @@ export const updateReadme = withErrorHandling(async () => {
   const articles = await fetchTechnologyNews();
   if (!(Array.isArray(articles))) throw new Error("Failed to fetch articles");
   const markdownContent = generateMarkdownList(articles);
-  const readmeTemplate = `# Latest Technology News\n\n## Top 10 Articles\n\n${markdownContent}\n`;
+  const readmeTemplate = `# Latest Technology News\n\n## Top 20 Articles\n\n${markdownContent}\n`;
   await fsPromises.writeFile("README.md", readmeTemplate);
 });
 
