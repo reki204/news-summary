@@ -7,6 +7,7 @@ export const fetchTechnologyNews = async (): Promise<Article[]> => {
     q: "technology programming",
     language: "en",
     sortBy: "popularity",
+    pageSize: "10",
     apikey: Bun.env.API_KEY as string,
   };
   const urlQuery = new URLSearchParams(params);
