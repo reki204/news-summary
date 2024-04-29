@@ -11,20 +11,7 @@ const server = Bun.serve({
     if (path === "/api/news") {
       const newsService = new NewsService();
       const readmeUpdater = new ReadmeUpdater(newsService);
-
-      try {
-        await readmeUpdater.updateReadme();
-        return new Response(JSON.stringify({ message: "Readme updated successfully" }), {
-          headers: { 'Content-Type': 'application/json' },
-          status: 200
-        });
-      } catch (error) {
-        console.error("Error updating Readme:", error);
-        return new Response(JSON.stringify({ error: error }), {
-          headers: { 'Content-Type': 'application/json' },
-          status: 500
-        });
-      }
+      return await readmeUpdater.updateReadme();
     }
     return new Response("Page not found", { status: 404 });
   },

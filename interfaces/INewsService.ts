@@ -1,4 +1,4 @@
-import type { Article } from "../types";
+import type { Article } from "../types/types";
 
 export interface INewsService {
   fetchNews: () => Promise<Article[]>;
