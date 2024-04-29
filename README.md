@@ -26,9 +26,6 @@
 - ![Image](https://i.insider.com/660c5f9a3f923f7dab03d7c0?width=1200&format=jpeg)
  - [9 AI jobs you can get without being an expert coder, from product designer to sales engineer](https://www.businessinsider.com/ai-jobs-without-coding-2024-4) - Not all AI jobs require you to code. Here are some top AI jobs you can land without extensive coding knowledge.
 
-- ![Image](https://i.insider.com/6602f78a16bde8d4ead245cd?width=1200&format=jpeg)
- - [Inside the AI talent-hiring frenzy](https://www.businessinsider.com/inside-the-ai-hiring-frenzy-big-tech-talent-war-2024-3) - The fight to hire the best AI talent is heating up, and it looks like Big Tech — and big paychecks — are winning out right now amid a skill shortage.
-
 - ![Image](https://i.insider.com/660eeb971caec1275a6cf8ef?width=1200&format=jpeg)
  - [Bob Iger reveals when Disney's password-sharing crackdown will go into full effect](https://www.businessinsider.com/disney-password-sharing-enforcement-begins-june-2024-4) - Disney CEO Bob Iger announced the streaming service will start cracking down on password-sharing in June with a full rollout in September.
 
@@ -62,3 +59,6 @@ The post BBC in need of Sonic …
 
 - ![Image](https://substackcdn.com/image/fetch/w_1200,h_600,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd0036f7a-20b2-4b32-9a8f-994b6be3630a_800x533.jpeg)
  - [My Journey into Personal Computer Software Development in 1983](https://farrs.substack.com/p/my-journey-into-personal-computer) - In 1983, Personal Computers were quite the up and coming thing. You could buy your own for a few thousand dollars. Though they were mostly considered toys by many East Coast programmers (more expensive "workstations" were the rage), there had already been som…
+
+- ![Image](https://images.unsplash.com/photo-1506905925346-21bda4d32df4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTc3M3wwfDF8c2VhcmNofDF8fG1vdW50YWluc3xlbnwwfHx8fDE3MTI2NjMxMTZ8MA&ixlib=rb-4.0.3&q=80&w=2000content/images/size/w1200)
+ - [Writing highly scalable backends in UDP](https://mas-bandwidth.com/writing-highly-scalable-backends-in-udp/) - In this article I share an interview question I've used for years at Network Next. How to implement a highly scalable backend in UDP. Can you solve it?
